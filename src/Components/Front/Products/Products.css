@@ -25,7 +25,7 @@
     position: relative;
     width: calc(33.33% - 20px); 
     margin-bottom: 20px;
-    background-color: rgb(169, 164, 164);
+    background-color: lightpink;
     border-radius: 5px;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
 }
