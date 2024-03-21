@@ -3,11 +3,10 @@ import './Cart.css'
 
 const Cart = ({ cartItems, handleAddProduct, handleRemoveProduct, handleCartClearance }) => {
     
-    const totalPrice = cartItems.reduce((price, item) =>{
-        console.log(price, item);
-        price + (item.quantity * item.price)
+    const totalPrice = cartItems.reduce((price, item) => {
+        return price + (item.quantity * item.price);
     }, 0);
-    console.log(cartItems)
+
     return (
         <div>
             <div className='cart-items'>
@@ -34,14 +33,15 @@ const Cart = ({ cartItems, handleAddProduct, handleRemoveProduct, handleCartClea
                                 <button className="cart-items-remove" onClick={() => handleRemoveProduct(item)}>-</button>
                             </div>
                             <div className='cart-items-price'>
-                                {item.quantity * item.price}
+                                {item.quantity} * {item.price}
                             </div>
                         </div>
                     ))}
                 </div>
 
                 <div className='cart-items-total-price-name'>
-                    Total Price: {totalPrice}
+                    Total Price:
+                    <div className='cart-items-total-price'>{totalPrice}</div>
                 </div>
             </div>
         </div>
